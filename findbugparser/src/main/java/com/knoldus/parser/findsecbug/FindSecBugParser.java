@@ -17,7 +17,7 @@ import org.w3c.dom.NodeList;
 import com.knoldus.parser.findsecbug.model.ReportData;
 
 /**
- * @author Crunchify.com
+ * @author com.knoldus
  */
 
 public class FindSecBugParser {
@@ -26,14 +26,15 @@ public class FindSecBugParser {
 		ReportData rd = parseReport(inputFile);
 		System.out.println(rd);
 	}
-
+/**
+ * for given file path it will parse and give required data
+ * @param inputFile
+ * @return
+ */
 	public static ReportData parseReport(String inputFile) {
 		ReportData data = new ReportData();
-		// String inputFile =
-		// "file:///home/jitendra/projects/cucumberui/target/spotbugsXml.xml";
 		Map<String, Map<String, List<String>>> parsedMap = new HashMap<>();
 		try {
-			// BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
 			Document doc = factory.newDocumentBuilder().parse(inputFile);
@@ -46,11 +47,8 @@ public class FindSecBugParser {
 				Node node = nodes.item(index);
 				NamedNodeMap nodeMap = node.getAttributes();
 				Node category = nodeMap.getNamedItem("category");
-				System.out.println(category.getNodeValue());
 				Node priority = nodeMap.getNamedItem("priority");
-				System.out.println(priority.getNodeValue());
 				Node longDesc = node.getChildNodes().item(1);
-				System.out.println(longDesc.getTextContent());
 
 				if (parsedMap.get(category.getNodeValue()) != null) {
 					Map<String, List<String>> priorityMap = parsedMap.get(category.getNodeValue());
