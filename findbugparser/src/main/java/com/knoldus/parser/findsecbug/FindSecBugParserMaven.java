@@ -20,7 +20,7 @@ import com.knoldus.parser.findsecbug.model.ReportData;
  * @author com.knoldus
  */
 
-public class FindSecBugParser {
+public class FindSecBugParserMaven {
 	public static void main(String[] args) throws IOException {
 		String inputFile = "file:///home/jitendra/projects/cucumberui/target/spotbugsXml.xml";
 		ReportData rd = parseReport(inputFile);

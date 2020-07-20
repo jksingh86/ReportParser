@@ -1,0 +1,640 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+		</style>
+</head>
+<body>
+<h1>SpotBugs Report</h1>
+<p>Produced using <a href="https://spotbugs.github.io">SpotBugs</a>3.1.12.</p>
+<p>Project: 
+			</p>
+<h2>Metrics</h2>
+<p>33925 lines of code analyzed,
+	in 1364 classes, 
+	in 45 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.03</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">0.12</td>
+</tr>
+<tr class="tablerow1">
+<td>Low Priority Warnings</td>
+<td align="right">11</td>
+<td align="right">0.32</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>16</b>
+</td>
+<td align="right">
+<b>0.47</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Summary</h2>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">16</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>16</b>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h1>Warnings</h1>
+<p>Click on each warning link to see a full description of the issue, and
+	    details of how to resolve it.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">MD2, MD4 and MD5 are weak hash functions</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>MD5 is not a recommended cryptographic hash function<br/>
+<br/>
+<br/>In file Crypto.scala,
+					
+						line 75<br/>In class ludington.common.oauth2.Crypto$<br/>In method ludington.common.oauth2.Crypto$.md5(byte[])<br/>At Crypto.scala:[line 75]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#PREDICTABLE_RANDOM">Predictable pseudorandom number generator</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The use of java.util.concurrent.ThreadLocalRandom is predictable<br/>
+<br/>
+<br/>In file TransparentExponentialBackoffSupervisor.scala,
+					
+						line 24<br/>In class ludington.common.actor.TransparentExponentialBackoffSupervisor$<br/>In method ludington.common.actor.TransparentExponentialBackoffSupervisor$.calculateDelay(int, FiniteDuration, FiniteDuration, double)<br/>At TransparentExponentialBackoffSupervisor.scala:[line 24]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#PREDICTABLE_RANDOM_SCALA">Predictable pseudorandom number generator (Scala)</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The use of scala.util.Random.nextString() is predictable<br/>
+<br/>
+<br/>In file Crypto.scala,
+					
+						line 28<br/>In class ludington.common.oauth2.Crypto$<br/>In method ludington.common.oauth2.Crypto$.generateAuthCode()<br/>At Crypto.scala:[line 28]<br/>Value scala.util.Random.nextString()</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">SHA-1 is a weak hash function</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>SHA-1 is not a recommended cryptographic hash function<br/>
+<br/>
+<br/>In file Crypto.scala,
+					
+						line 26<br/>In class ludington.common.oauth2.Crypto$<br/>In method ludington.common.oauth2.Crypto$.generateAuthCode()<br/>At Crypto.scala:[line 26]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">SHA-1 is a weak hash function</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>SHA-1 is not a recommended cryptographic hash function<br/>
+<br/>
+<br/>In file Crypto.scala,
+					
+						line 47<br/>In class ludington.common.oauth2.Crypto$<br/>In method ludington.common.oauth2.Crypto$.sha1(byte[])<br/>At Crypto.scala:[line 47]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file ShardAllocationStrategy.scala,
+					
+						line 23<br/>In class ludington.common.actor.ShardAllocationStrategy<br/>In method ludington.common.actor.ShardAllocationStrategy.rebalance(Map, Set)<br/>At ShardAllocationStrategy.scala:[line 23]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source scala/runtime/BoxesRunTime.boxToBoolean(Z)Ljava/lang/Boolean;<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file AmqpClient.scala,
+					
+						line 255<br/>In class ludington.common.amqp.AmqpClientImpl<br/>In method ludington.common.amqp.AmqpClientImpl.logAfterPublish(Amqp$Payload)<br/>At AmqpClient.scala:[line 255]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source ludington/common/amqp/AmqpClientImpl.formatExchange(Ljava/lang/String;Ljava/lang/String;Lscala/collection/Iterable;)Ljava/lang/String;<br/>Unknown source ludington/common/amqp/Amqp$Payload.payload()[B<br/>Unknown source ludington/common/amqp/Amqp$Payload.headers()Lscala/collection/immutable/Map;<br/>Unknown source ludington/common/amqp/Amqp$Payload.routingKey()Ljava/lang/String;<br/>Unknown source ludington/common/amqp/Amqp$Payload.exchange()Ljava/lang/String;<br/>At AmqpClient.scala:[line 254]<br/>At AmqpClient.scala:[line 255]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file AmqpClient.scala,
+					
+						line 250<br/>In class ludington.common.amqp.AmqpClientImpl<br/>In method ludington.common.amqp.AmqpClientImpl.logBeforePublish(Amqp$Payload)<br/>At AmqpClient.scala:[line 250]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source ludington/common/amqp/AmqpClientImpl.formatExchange(Ljava/lang/String;Ljava/lang/String;Lscala/collection/Iterable;)Ljava/lang/String;<br/>Unknown source ludington/common/amqp/Amqp$Payload.payload()[B<br/>Unknown source ludington/common/amqp/Amqp$Payload.headers()Lscala/collection/immutable/Map;<br/>Unknown source ludington/common/amqp/Amqp$Payload.routingKey()Ljava/lang/String;<br/>Unknown source ludington/common/amqp/Amqp$Payload.exchange()Ljava/lang/String;<br/>At AmqpClient.scala:[line 249]<br/>At AmqpClient.scala:[line 250]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file AmqpRest.scala,
+					
+						line 74<br/>In class ludington.common.amqp.AmqpRestImpl<br/>In method ludington.common.amqp.AmqpRestImpl.createVhost(String)<br/>At AmqpRest.scala:[line 74]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source akka/http/scaladsl/model/HttpRequest$.apply(Lakka/http/scaladsl/model/HttpMethod;Lakka/http/scaladsl/model/Uri;Lscala/collection/immutable/Seq;Lakka/http/scaladsl/model/RequestEntity;Lakka/http/scaladsl/model/HttpProtocol;)Lakka/http/scaladsl/model/HttpRequest;<br/>Method usage not detected<br/>At AmqpRest.scala:[line 73]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file AmqpRest.scala,
+					
+						line 81<br/>In class ludington.common.amqp.AmqpRestImpl<br/>In method ludington.common.amqp.AmqpRestImpl.createVhostPolicy(String)<br/>At AmqpRest.scala:[line 81]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source akka/http/scaladsl/model/HttpRequest$.apply(Lakka/http/scaladsl/model/HttpMethod;Lakka/http/scaladsl/model/Uri;Lscala/collection/immutable/Seq;Lakka/http/scaladsl/model/RequestEntity;Lakka/http/scaladsl/model/HttpProtocol;)Lakka/http/scaladsl/model/HttpRequest;<br/>At AmqpRest.scala:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file AmqpRest.scala,
+					
+						line 88<br/>In class ludington.common.amqp.AmqpRestImpl<br/>In method ludington.common.amqp.AmqpRestImpl.deleteVhost(String)<br/>At AmqpRest.scala:[line 88]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source akka/http/scaladsl/model/HttpRequest$.apply(Lakka/http/scaladsl/model/HttpMethod;Lakka/http/scaladsl/model/Uri;Lscala/collection/immutable/Seq;Lakka/http/scaladsl/model/RequestEntity;Lakka/http/scaladsl/model/HttpProtocol;)Lakka/http/scaladsl/model/HttpRequest;<br/>Method usage not detected<br/>At AmqpRest.scala:[line 87]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.warn(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file BufferSortedComitter.scala,
+					
+						line 288<br/>In class ludington.common.committer.BufferSortedCommitter$$anonfun$receive$1<br/>In method ludington.common.committer.BufferSortedCommitter$$anonfun$receive$1.applyOrElse(Object, Function1)<br/>At BufferSortedComitter.scala:[line 288]<br/>Sink method org/slf4j/Logger.warn(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source ludington/common/committer/SortedCommittableBuffer.dumpState()Ljava/lang/String;<br/>At BufferSortedComitter.scala:[line 288]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file GracefulPartitionAssignmentHandler.scala,
+					
+						line 29<br/>In class ludington.common.committer.GracefulPartitionAssignmentHandler<br/>In method ludington.common.committer.GracefulPartitionAssignmentHandler.onAssign(Set, RestrictedConsumer)<br/>At GracefulPartitionAssignmentHandler.scala:[line 29]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/immutable/List.sorted(Lscala/math/Ordering;)Ljava/lang/Object;<br/>At GracefulPartitionAssignmentHandler.scala:[line 29]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file GracefulPartitionAssignmentHandler.scala,
+					
+						line 38<br/>In class ludington.common.committer.GracefulPartitionAssignmentHandler<br/>In method ludington.common.committer.GracefulPartitionAssignmentHandler.onRevoke(Set, RestrictedConsumer)<br/>At GracefulPartitionAssignmentHandler.scala:[line 38]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/immutable/List.sorted(Lscala/math/Ordering;)Ljava/lang/Object;<br/>At GracefulPartitionAssignmentHandler.scala:[line 38]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.info(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file Microservice.scala,
+					
+						line 17<br/>In class ludington.common.microservice.Microservice$<br/>In method ludington.common.microservice.Microservice$.startRestNode(ActorSystem, RestNode, int, String, ExecutionContext, Materializer, RoutingSettings, ParserSettings, RoutingLog)<br/>At Microservice.scala:[line 17]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source scala/runtime/BoxesRunTime.boxToInteger(I)Ljava/lang/Integer;<br/>Method usage not detected<br/>In Microservice.scala</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</td>
+<td width="10%" valign="top">Low</td>
+<td width="70%">
+<p>This use of org/slf4j/Logger.warn(Ljava/lang/String;)V might be used to include CRLF characters into log messages<br/>
+<br/>
+<br/>In file KeyspaceBuilder.scala,
+					
+						line 47<br/>In class ludington.common.repository.cassandra.KeyspaceBuilder<br/>In method new ludington.common.repository.cassandra.KeyspaceBuilder(Config)<br/>At KeyspaceBuilder.scala:[line 47]<br/>Sink method org/slf4j/Logger.warn(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/immutable/List.mkString(Ljava/lang/String;)Ljava/lang/String;<br/>At KeyspaceBuilder.scala:[line 47]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h1>
+<a name="Details">Warning Types</a>
+</h1>
+<h2>
+<a name="CRLF_INJECTION_LOGS">Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="http://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="http://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar1.pdf">NIST: Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="http://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="http://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar1.pdf">NIST: Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="PREDICTABLE_RANDOM">Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://jazzy.id.au/default/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (http://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="http://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="PREDICTABLE_RANDOM_SCALA">Predictable pseudorandom number generator (Scala)</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <b>java.security.SecureRandom</b>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>import scala.util.Random
+
+def generateSecretToken() {
+    val result = Seq.fill(16)(Random.nextInt)
+    return result.map("%02x" format _).mkString
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>import java.security.SecureRandom
+
+def generateSecretToken() {
+    val rand = new SecureRandom()
+    val value = Array.ofDim[Byte](16)
+    rand.nextBytes(value)
+    return value.map("%02x" format _).mkString
+}</pre>
+</p>
+<!--<p>
+<b>Solution:</b>
+<pre>import java.security.SecureRandom
+import scala.util.Random._
+
+def generateSecretToken() {
+    val secRandom = javaRandomToRandom(new SecureRandom())
+    val result = Seq.fill(16)(secRandom.nextInt)
+    return result.map("%02x" format _).mkString
+}</pre>
+</p>-->
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://jazzy.id.au/default/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (http://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="http://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar1.pdf">NIST: Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar1.pdf">NIST: Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<p>
+<br/>
+<br/>
+</p>
+</body>
+</html>

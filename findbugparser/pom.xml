@@ -5,4 +5,13 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>findbugparser</name>
   <description>findbugparser</description>
+  
+  <dependencies>
+  	<dependency>
+	    <groupId>org.jsoup</groupId>
+	    <artifactId>jsoup</artifactId>
+	    <version>1.10.2</version>
+	</dependency>
+  </dependencies>
+  
 </project>
